@@ -68,6 +68,6 @@ class ReservatieController {
             return "/bevestigen/{id}";
         }
         reservatieService.updateAndCreate(reservatie);
-        return "redirect:/rapport";
+        return "rapport";
     }
 }
