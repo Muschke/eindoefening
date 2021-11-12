@@ -9,13 +9,13 @@
     <img th:src="@{/images/{id}.jpg(id=*{id})}">
     <d1>
         <dt>Prijs in euro</dt>
-        <dd th:text="*{{prijs}}"></dd>
+        <b><dd th:text="*{{prijs}}"></dd></b>
         <dt>Voorraad</dt>
-        <dd th:text="*{voorraad}"></dd>
+       <b><dd th:text="*{voorraad}"></dd></b>
         <dt>Gereserveerd</dt>
-        <dd th:text="*{gereserveerd}"></dd>
+        <b><dd th:text="*{gereserveerd}"></dd></b>
         <dt>Beschikbaar</dt>
-        <dd th:text="*{beschikbareFilms}"></dd>
+        <b><dd th:text="*{beschikbareFilms}"></dd></b>
     </d1>
 
 

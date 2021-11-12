@@ -8,7 +8,9 @@
 <h1>Klanten</h1>
 <form th:object="${vindNaamAdhvLettersForm}" method="get" th:action="@{/klanten}">
     <label>Familienaam bevat:
+        <br>
     <input th:field="*{letters}" autofocus required></label>
+    <br><br>
     <button>Zoeken</button>
 </form>
 

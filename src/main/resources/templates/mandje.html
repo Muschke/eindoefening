@@ -18,10 +18,10 @@
         <tr th:each="film : ${filmsInMandje}" th:object="${film}">
             <td th:text="*{titel}"></td>
             <td th:text="*{{prijs}}"></td>
-            <td><input type="checkbox" name="id" th:value="*{id}"></td>
+            <td th:align="center"><input type="checkbox" name="id" th:value="*{id}"></td>
         </tr>
         <tr>
-            <td>Totaal</td>
+            <td><b>Totaal:</b></td>
             <td th:text="${totaalMandje}"></td>
         </tr>
         </tbody>

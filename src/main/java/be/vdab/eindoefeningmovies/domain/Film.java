@@ -11,7 +11,7 @@ public class Film {
     @NotNull @NotBlank @NotEmpty private final String titel;
     @NotNull @PositiveOrZero private final int voorraad;
     private final int gereserveerd;
-    @NotNull @Positive @NumberFormat(pattern = "0.00") private final BigDecimal prijs;
+    @NotNull @Positive @NumberFormat(pattern = "€ 0.00") private final BigDecimal prijs;
     private boolean beschikbaar = false;
     private final int beschikbareFilms;
 
