@@ -21,6 +21,7 @@ class DefaultReservatieService implements ReservatieService {
     @Transactional
     //straks hier update bij in verwerken
     public void updateAndCreate(Reservatie reservatie) {
+
         reservatieRepository.create(reservatie);
         filmRepository.update(reservatie.getFilmId());
 
