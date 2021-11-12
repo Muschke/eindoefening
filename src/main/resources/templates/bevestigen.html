@@ -9,7 +9,7 @@
 <h1>Bevestigen</h1>
 
 
-<h4><span th:text="${filmsInMandje}"></span> film(s) bevestigen voor <span th:text="|${klant.voornaam} ${klant.familienaam}|"></span></h4>
+<p><span th:text="${filmsInMandje}"></span> film(s) bevestigen voor <span th:text="|${klant.voornaam} ${klant.familienaam}|"></span></p>
 
 <form th:object="${reservatie}" th:action="@{/klanten/bevestigen/verwerken}" method="post">
     <input type="hidden" th:field="*{klantid}" id="klantid" th:value="${klant.id}">

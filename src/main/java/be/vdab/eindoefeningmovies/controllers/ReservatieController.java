@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
@@ -63,9 +64,9 @@ class ReservatieController {
 
     @PostMapping("/bevestigen/verwerken")
         public String toevoegenEnUpdaten(@Valid Reservatie reservatie, Errors errors) {
-       /* if(errors.hasErrors()){
-            return "/klanten/bevestigen/{id}";
-        }*/
+       if(errors.hasErrors()){
+            return "/bevestigen/{id}";
+        }
         reservatieService.updateAndCreate(reservatie);
         return "redirect:/rapport";
     }
