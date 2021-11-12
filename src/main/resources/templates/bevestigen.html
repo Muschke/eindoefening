@@ -2,6 +2,7 @@
 <html lang="nl" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments::head(title='Bevestigen')"></head>
 <body>
+<script th:src="@{/js/preventDoubleSubmit.js}" defer></script>
 <a th:href="@{/}">Genres</a>
 <a th:href="@{/mandje}">Mandje</a>
 <a th:href="@{/klanten}">Klanten</a>
