@@ -1,6 +1,7 @@
 package be.vdab.eindoefeningmovies.services;
 
 import be.vdab.eindoefeningmovies.domain.Reservatie;
+import be.vdab.eindoefeningmovies.exceptions.FilmNietVoorradigException;
 import be.vdab.eindoefeningmovies.repositories.FilmRepository;
 import be.vdab.eindoefeningmovies.repositories.ReservatieRepository;
 import org.springframework.stereotype.Service;
@@ -24,10 +25,18 @@ class DefaultReservatieService implements ReservatieService {
         var filmIds = reservatie.getFilmIds();
         var klantId = reservatie.getKlantid();
         for (long filmid:filmIds) {
-            reservatieRepository.create(klantId, filmid);
-            filmRepository.update(filmid);
-        }
 
+            var film = filmRepository.findById(filmid);
+
+            if(film.get().getBeschikbareFilms()>0) {
+                reservatieRepository.create(klantId, filmid);
+                filmRepository.update(filmid);
+            } else {
+                throw new FilmNietVoorradigException("Film is ondertussen niet meer voorradig." +
+                        "Iemand anders heeft gereserveerd");
+            }
+
+        }
 
     }
 
