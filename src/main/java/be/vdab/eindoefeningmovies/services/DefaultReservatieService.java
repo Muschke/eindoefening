@@ -21,9 +21,13 @@ class DefaultReservatieService implements ReservatieService {
     @Transactional
     //straks hier update bij in verwerken
     public void updateAndCreate(Reservatie reservatie) {
+        var filmIds = reservatie.getFilmIds();
+        var klantId = reservatie.getKlantid();
+        for (long filmid:filmIds) {
+            reservatieRepository.create(klantId, filmid);
+            filmRepository.update(filmid);
+        }
 
-        reservatieRepository.create(reservatie);
-        filmRepository.update(reservatie.getFilmId());
 
     }
 

@@ -56,7 +56,7 @@ class KlantController {
                 });
         modelAndView.addObject("filmsInMandje", mandje.telAantalFilms());
         modelAndView.addObject("filmIds", mandje.getIds());
-        modelAndView.addObject("reservatie", new Reservatie(id, mandje.getIds().iterator().next(), LocalDateTime.now()));
+        modelAndView.addObject("reservatie", new Reservatie(id, mandje.getIds(), LocalDateTime.now()));
         return modelAndView;
     }
 

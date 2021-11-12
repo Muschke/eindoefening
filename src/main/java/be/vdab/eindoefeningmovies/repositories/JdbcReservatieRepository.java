@@ -21,7 +21,7 @@ class JdbcReservatieRepository implements ReservatieRepository{
     }
 
     @Override
-    public void create(Reservatie reservatie) {
-        insert.execute(Map.of("klantId", reservatie.getKlantid(), "filmId", reservatie.getFilmId(),"reservatie", LocalDateTime.now()));
+    public void create(long klantId, long filmId) {
+        insert.execute(Map.of("klantId", klantId, "filmId", filmId,"reservatie", LocalDateTime.now()));
     }
 }

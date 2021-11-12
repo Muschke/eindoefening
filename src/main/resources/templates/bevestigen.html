@@ -12,7 +12,7 @@
 
 <form th:object="${reservatie}" th:action="@{/klanten/bevestigen/verwerken}" method="post">
     <input type="hidden" th:field="*{klantid}" id="klantid" th:value="${klant.id}">
-    <input type="hidden" th:field="*{filmId}" id="filmid" th:value="${filmIds}">
+    <input type="hidden" th:field="*{filmIds}" id="filmid" th:value="${filmIds}">
     <input type="hidden" id="datetime" value="0">
 <button>Bevestigen</button>
 
