@@ -61,7 +61,7 @@ class JdbcFilmRepository implements FilmRepository{
         var sql = "select sum(prijs) from films where id in (" +
                 "?,".repeat(ids.size()-1) +
                 "?)";
-        return template.queryForObject(sql, BigDecimal.class, ids);
+        return template.queryForObject(sql, BigDecimal.class, ids.toArray());
     }
     @Override
     public void update(long id) {

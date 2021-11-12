@@ -32,7 +32,7 @@ class MandjeController {
     public ModelAndView haalMandje() {
         var modelAndView = new ModelAndView("mandje", "filmsInMandje", filmService.findByIds(mandje.getIds()));
         /*Onderstaand is voor totaal tabel, geeft SQL syntax voorlopig, pas pas in als test werkt*/
-        // modelAndView.addObject("totaalMandje", filmService.vindTotalePrijsByIds(mandje.getIds()));
+        modelAndView.addObject("totaalMandje", filmService.vindTotalePrijsByIds(mandje.getIds()));
         return modelAndView;
     }
 
