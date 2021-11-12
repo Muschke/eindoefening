@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Bevestigen')"></head>
+<body>
+<a th:href="@{/}">Genres</a>
+<a th:href="@{/mandje}">Mandje</a>
+<a th:href="@{/klanten}">Klanten</a>
+<h1>Bevestigen</h1>
+
+
+<h4><span th:text="${filmsInMandje}"></span> film(s) bevestigen voor <span th:text="|${klant.voornaam} ${klant.familienaam}|"></span></h4>
+
+<form th:object="${reservatie}" th:action="@{/klanten/bevestigen/verwerken}" method="post">
+    <input type="hidden" th:field="*{klantid}" id="klantid" th:value="${klant.id}"> <!--Th:fields geven error-->
+    <p th:text="${klant.id}"></p>
+    <input type="hidden" th:field="*{filmId}" id="filmid" th:value="${filmIds}"> <!--Th:fields geven error-->
+    <p th:text="${filmIds}"></p>
+    <input type="hidden" id="datetime" value="0">
+<button>Bevestigen</button>
+
+</form>
+
+</body>
+</html>
