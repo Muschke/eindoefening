@@ -25,4 +25,7 @@ public class Mandje implements Serializable {
         var aantal = ids.size();
         return aantal;
     }
+    public void verwijderAlleIds() {
+        ids.clear();
+    }
 }
