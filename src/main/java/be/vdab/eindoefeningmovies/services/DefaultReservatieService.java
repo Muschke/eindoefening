@@ -25,19 +25,18 @@ class DefaultReservatieService implements ReservatieService {
         var filmIds = reservatie.getFilmIds();
         var klantId = reservatie.getKlantid();
         for (long filmid:filmIds) {
-
             var film = filmRepository.findById(filmid);
-
-            if(film.get().getBeschikbareFilms()>0) {
-                reservatieRepository.create(klantId, filmid);
-                filmRepository.update(filmid);
-            } else {
-                throw new FilmNietVoorradigException("Film is ondertussen niet meer voorradig." +
-                        "Iemand anders heeft gereserveerd");
+                if (film.get().getBeschikbareFilms() > 0) {
+                    reservatieRepository.create(klantId, filmid);
+                    filmRepository.update(filmid);
+                } else {
+                    throw new FilmNietVoorradigException("Film is ondertussen niet meer voorradig." +
+                            "Iemand anders heeft gereserveerd");
+                }
             }
 
         }
 
     }
 
-}
+

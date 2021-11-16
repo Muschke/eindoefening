@@ -1,6 +1,8 @@
 package be.vdab.eindoefeningmovies.repositories;
 
 import be.vdab.eindoefeningmovies.domain.Reservatie;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
@@ -14,6 +16,7 @@ import java.util.Map;
 class JdbcReservatieRepository implements ReservatieRepository{
     private final JdbcTemplate template;
     private final SimpleJdbcInsert insert;
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     JdbcReservatieRepository(JdbcTemplate template) {
         this.template = template;

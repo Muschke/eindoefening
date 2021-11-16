@@ -19,3 +19,8 @@ th {
     color: white;
     text-align: left;
 }
+
+.error{
+    color: purple;
+    font-family: 'Comfortaa', cursive;
+}

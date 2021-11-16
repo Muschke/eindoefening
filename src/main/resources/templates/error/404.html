@@ -2,9 +2,12 @@
 <html lang="nl" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments::head(title= 'Pagina niet gevonden')"></head>
 <body>
-<body>
+
 <a th:href="@{/}">Genres</a>
-<h1>We kunnen de gevraagde pagina niet vinden.</h1>
-</body>
+<h1 class="error">We kunnen de gevraagde pagina niet vinden.</h1>
+<p class="error">De pagina waarnaar u zoekt bestaat niet. Gelieve de link 'genres' te selecteren. Deze brengt
+u terug naar het startscherm waar u films kan toevoegen aan uw mandje.</p>
+
+
 </body>
 </html>
